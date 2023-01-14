@@ -29,3 +29,5 @@ class Edge:
         self.value = value
         node1.connections.append(node2)
         node2.connections.append(node1)
+
+
