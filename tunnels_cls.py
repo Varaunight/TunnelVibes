@@ -18,9 +18,9 @@ class Node:
         print([node.name for node in self.connections])
 
 
-
 def is_connected(node1, node2):
     return node1 in node2.connections
+
 
 class Edge:
     def __init__(self, node1, node2, value=0):
