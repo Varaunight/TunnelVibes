@@ -34,4 +34,4 @@ def name_paths(lop):
         print(path)
 
 
-name_paths(all_paths(B2,SLC))
+name_paths(all_paths(MC, STC))
