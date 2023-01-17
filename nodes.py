@@ -79,12 +79,10 @@ def make_edges(edges_file):
 
     return edges
 
-make_edges('edge_cons.xlsx')
+make_edges('edges.xlsx')
 
 
 # is_connected(MC,SLC)
 
-for node in Nodes:
-    print(node.name+":")
-    node.printcons()
-    print()
+
+

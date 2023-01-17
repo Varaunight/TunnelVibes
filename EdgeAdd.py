@@ -19,6 +19,8 @@ def dbadd(node1, node2):
 # Load an Excel file into a DataFrame
 df = pd.read_excel('edge_cons.xlsx')
 
+
+
 x = False
 while x == False:
     node1 = input("Enter first node or 'q' to quit: ")
@@ -32,4 +34,8 @@ while x == False:
         continue
 
     dbadd(node1, node2)
+
+
+
+
 
