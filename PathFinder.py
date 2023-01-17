@@ -18,18 +18,20 @@ def all_paths(node1, node2):
 
     return paths
 
+def nodename(lon):
+    nodes = []
+    for node in lon:
+        nodes.append(node.name)
+
+    return nodes
+
 def name_paths(lop):
     namedpaths = []
     for path in lop:
-        if isinstance(path, list):
-            namedpaths.append(name_paths(path))
-            continue
+        namedpaths.append(nodename(path))
 
-        namedpaths.append(path.name)
-
-    print(namedpaths)
+    for path in namedpaths:
+        print(path)
 
 
-name_paths(all_paths(B1, B2))
-
-
+name_paths(all_paths(B2,SLC))
