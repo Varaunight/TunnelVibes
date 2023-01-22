@@ -2,7 +2,6 @@ from nodes import *
 import pandas as pd
 import time
 import random
-from rich.text import Text
 
 # read the Excel file into a DataFrame
 df = pd.read_excel('edges.xlsx')
@@ -143,20 +142,3 @@ def path_finder():
 
 path_finder()
      
-
-
-
-# # all_paths(MC, QNC)
-
-
-# # search for the pair of entries
-# search_pair = ('MC', 'SLC')
-# matching_rows = df[(df['First'] == search_pair[0]) & (df['Second'] == search_pair[1])]
-
-# # print the entry from the next row
-# try:
-#     print(matching_rows['Route A'].iloc[0])
-# except:
-#     search_pair = ('MC', 'SLC')
-#     matching_rows = df[(df['First'] == search_pair[0]) & (df['Second'] == search_pair[1])]
-#     print(matching_rows['Route B'].iloc[0])
