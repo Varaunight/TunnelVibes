@@ -1,0 +1,95 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Wix+Madefor+Display&display=swap');
+
+
+.body {
+display: flex;
+flex-direction: column;
+margin: 0px;
+background-color: #3aafa9;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    background-color: burlywood;
+}
+
+.header {
+    font-family: 'Marcellus SC', serif;
+    font-size: 40px;
+    display: flex;
+    background-color: burlywood;
+    justify-content: center;
+    flex: 1 0 66%;
+    height: 80px;
+    align-items: center;
+}
+
+.tr {
+    flex: 1 1 33%;
+}
+
+
+.winter {
+    font-family: 'Wix Madefor Display', sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+.intro {
+    padding: 30px;
+    margin: 30px;
+    font-size: 20px;
+    align-self: center;
+}
+
+.start, .end {
+    padding: 5px;
+    margin: 10px;
+    width: 50%;
+    justify-self: center;
+}
+
+
+
+.bottom {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 50%;
+    background-color: grey;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.right {
+    display: flex;
+    flex: 1 0 50%;
+    background-color: paleturquoise;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 30%;
+    background-color: rgb(84, 91, 91);
+  }

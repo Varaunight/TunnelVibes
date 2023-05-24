@@ -49,7 +49,7 @@ def make_dir(lon):
     return directions
 
 
-x=1
+x=10
 def prints(text):
     if x == 1:
         for char in text:
