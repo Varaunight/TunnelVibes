@@ -2,6 +2,10 @@ from nodes import *
 import pandas as pd
 import time
 import random
+import os
+
+program_directory = os.path.dirname(os.path.abspath(__file__))
+os.chdir(program_directory)
 
 # read the Excel file into a DataFrame
 df = pd.read_excel('edges.xlsx')

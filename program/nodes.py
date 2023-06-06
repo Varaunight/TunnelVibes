@@ -79,7 +79,10 @@ def make_edges(edges_file):
 
     return edges
 
-make_edges('edges.xlsx')
+import os
+print(os.getcwd())
+
+make_edges("edges.xlsx")
 
 
 # is_connected(MC,SLC)
