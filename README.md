@@ -1,5 +1,5 @@
-# TunnelVibes
+# Tunnel Mapper
 
-Building a command line tool to find tunnels in UW. 
+A tool to find your way around the University of Waterloo, without having to go outside.
 
-Yeah!
+Especially useful for Winter! ❄️
