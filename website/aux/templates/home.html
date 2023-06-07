@@ -1,2 +1,42 @@
 {% extends "base.html" %}
+
+{% block css%}
+<link rel="stylesheet" href="../static/home.css"> 
+{% endblock %}
+
+
 {% block title %}Home{% endblock title %}
+
+{% block content %}
+    <div class="page">
+        <div class="container-for-form">
+            <div class="header-in-form">
+                <p>winter sucks,</p>
+                <p>let us help.</p>
+            </div>
+        
+
+            <form method="post">
+                <div class="form-group">
+                    <label for="from">Where you at?</label>
+                    <select name="from" id="from">
+                        {% for node in objects %}
+                            <option value="{{object['name']}}">{{object['name']}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="to">Where are you going?</label>
+                  <input type="text" id="to" name="to">
+                </div>
+                <button class="submit" type="submit">Submit</button>
+            </form>
+
+            <div class="output">
+                Output: {{start}} {{end}}
+            </div>
+        
+        </div>
+    </div>
+{% endblock %}

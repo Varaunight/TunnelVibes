@@ -1,0 +1,52 @@
+.page {
+    background-image: url('../static/uw.jpeg');
+    background-size: cover; 
+    background-position: center; 
+    width: 100%;
+    height: 100vh;
+    opacity: 0.8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-for-form {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: black;
+  color: aliceblue;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-in-form {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+}
+
+.submit{
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+.output {
+  margin: 20px;
+}
