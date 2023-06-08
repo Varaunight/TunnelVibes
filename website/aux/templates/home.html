@@ -20,21 +20,41 @@
                 <div class="form-group">
                     <label for="from">Where you at?</label>
                     <select name="from" id="from">
-                        {% for node in objects %}
-                            <option value="{{object['name']}}">{{object['name']}}</option>
+                        {% for object in objects %}
+                            <option value="{{object['name']}}" 
+                            {% if start == object['name'] %}
+                                selected
+                            {% endif %}>
+                                {{object['name']}}
+                            </option>
                         {% endfor %}
                     </select>
                 </div>
 
                 <div class="form-group">
                   <label for="to">Where are you going?</label>
-                  <input type="text" id="to" name="to">
+                  <select name="to" id="to">
+                    {% for object in objects %}
+                        <option value="{{object['name']}}"
+                        {% if end == object['name'] %}
+                                selected
+                        {% endif %}>
+                            {{object['name']}}
+                        </option>
+                    {% endfor %}
+                    </select>
                 </div>
                 <button class="submit" type="submit">Submit</button>
             </form>
 
             <div class="output">
-                Output: {{start}} {{end}}
+                {{start}} to {{end}}:
+
+                {% for path in print %}
+                    <p>{{path}}</p>
+                {% endfor %}
+
+                <p>{{ previous_from }}</p>
             </div>
         
         </div>

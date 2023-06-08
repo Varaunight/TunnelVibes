@@ -1,4 +1,4 @@
-from nodes import *
+from aux.program.nodes import *
 import pandas as pd
 import time
 import random
@@ -144,5 +144,17 @@ def path_finder():
     all_paths(node1,node2)
 
 
-path_finder()
+
+def paths(node1, node2):
+    queue = [node1]
+    path = [node1]
+    paths = []
+
+    find_paths(node1, node2, queue, path, paths)
+
+    namedpaths = []
+    for path in paths:
+        namedpaths.append(nodename(path))
+
+    return namedpaths
      
