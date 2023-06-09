@@ -4,11 +4,8 @@ import time
 import random
 import os
 
-program_directory = os.path.dirname(os.path.abspath(__file__))
-os.chdir(program_directory)
-
 # read the Excel file into a DataFrame
-df = pd.read_excel('edges.xlsx')
+df = pd.read_excel('aux/program/edges.xlsx')
 
 
 
@@ -22,7 +19,7 @@ def find_paths(current, dest, queue, path, paths):
             find_paths(neighbor,dest,queue,path + [neighbor], paths)
 
 
-
+# Takes a list of nodes and returns a new list, with their names instead
 def nodename(lon):
     nodes = []
     for node in lon:
@@ -123,28 +120,8 @@ def all_paths(node1, node2):
 
 
 
-def path_finder():
-    prints("Hello there traveler! You look cold and in a hurry. I will try to find you a warm path to your destination.")
-    cursor()
-    print()
-    prints("Firstly, where are you?")
-    print()
-    n1 = input()
-    prints("I see. Where would you like to go?")
-    print()
-    n2 = input()
-    node1 = next(filter(lambda x: x.name == n1.upper(),Nodes))
-    node2 = next(filter(lambda x: x.name == n2.upper(),Nodes))
-    prints("Okay...")
-    cursor()
-    prints("Let's see...")
-    cursor()
-    print()
-    print()
-    all_paths(node1,node2)
-
-
-
+# Takes two nodes and returns a list (of lists) all the paths between these nodes,
+# and then calls nodename on all the nodes in the paths
 def paths(node1, node2):
     queue = [node1]
     path = [node1]
@@ -157,4 +134,21 @@ def paths(node1, node2):
         namedpaths.append(nodename(path))
 
     return namedpaths
-     
+
+
+# Takes a list of nodes and returns their names connected with arrows
+def paths_as_strings(lon):
+    string_path = "hello"
+    if len(lon) == 0:
+        string_path = "There seems to be no internal pathways to your destination. Sorry about that."
+    else:
+        check = 0
+        for node in lon:
+            if check == 0:
+                string_path = node
+                check +=1
+            else:
+                string_path = string_path + " --> " + node
+
+    return string_path
+         

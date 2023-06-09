@@ -87,12 +87,16 @@ def make_edges(edges_file):
 
     return edges
 
-import os
-print(os.getcwd())
 
 make_edges("edges.xlsx")
 
 os.chdir(current_dir)
+
+
+nodes = []
+for object in objects:
+    if isinstance(object, Node):
+        nodes.append(object)
 
 # is_connected(MC,SLC)
 

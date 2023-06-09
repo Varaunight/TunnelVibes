@@ -15,6 +15,7 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../static/home.css"> 
     {% block css %} 
     {% endblock css %}
     <title>{% block title %}Home{% endblock %}</title>
@@ -54,8 +55,12 @@
           </form>
         </div>
     </nav>
-    
+
+    <div class="page">
     {% block content %}
     {% endblock content %}
+
+    </div>
+
 </body>
 </html>
