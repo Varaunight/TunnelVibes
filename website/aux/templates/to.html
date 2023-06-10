@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
-{% block css%}
-{% endblock %}
+<!-- {% block css%}
+{% endblock %} -->
 
 
 {% block title %}Home{% endblock title %}
@@ -46,6 +46,14 @@
                 <button class="submit" type="submit">Submit</button>
             </form>
 
+            <div class="output">
+                {{start}} to {{end}}:
+                        {% for path in output %}
+                        <div>
+                            <a href="#"> {{path}} </a>
+                        {% endfor %}
+                <p>{{previous_from}}</p>
+            </div>
         
         </div>
     </div>

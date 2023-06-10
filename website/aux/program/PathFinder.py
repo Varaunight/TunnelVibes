@@ -28,7 +28,7 @@ def nodename(lon):
     return nodes
 
 
-
+# Takes a list of nodes and returns a list of the directions to get there
 def make_dir(lon):
     directions = []
     i = 0
@@ -48,6 +48,11 @@ def make_dir(lon):
         lon.pop(0)
 
     return directions
+
+
+
+
+
 
 
 x=10
