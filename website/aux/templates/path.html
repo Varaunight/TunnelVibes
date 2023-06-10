@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p>{{start}}</p>
-<p>{{end}}</p>
-<p>{{index}}</p>
+    <div class="page">
+        <div class="container-for-form">
+            <h3> {{start}} to {{end}} :</h3> 
+
+            {% for direction in directions %}
+            <div class="direction-div">
+                <p>{{ chosen_path[loop.index - 1]['name']}}--->{{direction}}--->{{ chosen_path[loop.index]['name'] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

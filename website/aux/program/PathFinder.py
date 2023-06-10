@@ -4,11 +4,11 @@ import time
 import random
 import os
 
-# read the Excel file into a DataFrame
+# Def took this dataframe code from the internet 
 df = pd.read_excel('aux/program/edges.xlsx')
 
 
-
+# Depth first search for finding my paths
 def find_paths(current, dest, queue, path, paths):
     if current == dest:
         paths.append(path)
@@ -48,11 +48,6 @@ def make_dir(lon):
         lon.pop(0)
 
     return directions
-
-
-
-
-
 
 
 x=10

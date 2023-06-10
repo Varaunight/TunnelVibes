@@ -22,7 +22,7 @@ def home():
         previous_to = session.get('previous_to')
         return render_template("home.html", objects = nodes, previous_to = previous_to, previous_from = previous_from)
 
-
+# Dummy route for now, may populate this sooner or later
 @views.route("/about")
 def about():
     return render_template("about.html")
@@ -58,5 +58,19 @@ def to(start, end):
 
 @views.route("/<start>_to_<end>_<index>")
 def path(start, end, index):
-    return render_template("path.html", start = start, index = index, end = end)
+    node1 = next(filter(lambda x: x.name == start.upper(),Nodes))
+    node2 = next(filter(lambda x: x.name == end.upper(),Nodes))
+
+    queue = [node1]
+    path = [node1]
+    paths = []
+
+    find_paths(node1, node2, queue, path, paths)
+
+    chosen_path = paths[(int(index) - 1)]
+    # This might use more memory but still small scale to be negligible;
+    # I did this because the function make_dir has a side effect that mutates the list of nodes given to it
+    reference_path = list(chosen_path)
+    directions = make_dir(reference_path)
+    return render_template("path.html", start = start, index = index, end = end, directions = directions, chosen_path = chosen_path)
 
