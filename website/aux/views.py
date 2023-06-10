@@ -41,13 +41,11 @@ def to(start, end):
 
         return redirect(url_for('views.to', start = start, end = end))
 
-    
     else:
         node1 = next(filter(lambda x: x.name == start.upper(),Nodes))
         node2 = next(filter(lambda x: x.name == end.upper(),Nodes))
 
         pathlist = paths(node1, node2)
-        session['pathlist'] = pathlist
 
         if len(pathlist) == 0:
                 output.append("No paths dawg")
@@ -57,4 +55,8 @@ def to(start, end):
 
         return render_template("to.html", objects = nodes, start = start, end = end, output = output)
     
+
+@views.route("/<start>_to_<end>_<index>")
+def path(start, end, index):
+    return render_template("path.html", start = start, index = index, end = end)
 

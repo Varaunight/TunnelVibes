@@ -48,13 +48,14 @@
 
             <div class="output">
                 {{start}} to {{end}}:
-                        {% for path in output %}
+                    {% set check = 1 %}
+                    {% for path in output %}
                         <div>
-                            <a href="#"> {{path}} </a>
-                        {% endfor %}
-                <p>{{previous_from}}</p>
+                            <a href="/{{start}}_to_{{ end }}_{{ loop.index }}"> {{path}} </a>
+                        </div>
+                    {% endfor %}
             </div>
-        
         </div>
-    </div>
+    </div>    
+    
 {% endblock %}
