@@ -1,6 +1,14 @@
 ## Tunnel Vibes
+import os
+
+current_dir = os.getcwd()
+self = __file__
+file_dir = os.path.dirname(self)
+
+os.chdir(file_dir)
+
 import openpyxl
-from tunnels_cls import Node, Graph, Edge
+from aux.program.tunnels_cls import Node, Edge
 import gc
 
 
@@ -79,11 +87,16 @@ def make_edges(edges_file):
 
     return edges
 
-import os
-print(os.getcwd())
 
 make_edges("edges.xlsx")
 
+os.chdir(current_dir)
+
+
+nodes = []
+for object in objects:
+    if isinstance(object, Node):
+        nodes.append(object)
 
 # is_connected(MC,SLC)
 

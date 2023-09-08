@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+<!-- {% block css%}
+{% endblock %} -->
+
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    <div class="page">
+        <div class="container-for-form">
+            <div class="header-in-form">
+                <p>winter sucks,</p>
+                <p>let us help.</p>
+            </div>
+        
+
+            <form method="post">
+                <div class="form-group">
+                    <label for="from">Where you at?</label>
+                    <select name="from" id="from">
+                        {% for object in objects %}
+                            <option value="{{object['name']}}" 
+                            {% if start == object['name'] %}
+                                selected
+                            {% endif %}>
+                                {{object['name']}}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="to">Where are you going?</label>
+                  <select name="to" id="to">
+                    {% for object in objects %}
+                        <option value="{{object['name']}}"
+                        {% if end == object['name'] %}
+                                selected
+                        {% endif %}>
+                            {{object['name']}}
+                        </option>
+                    {% endfor %}
+                    </select>
+                </div>
+                <button class="submit" type="submit">Submit</button>
+            </form>
+
+            <div class="output">
+                {{start}} to {{end}}:
+                    {% set check = 1 %}
+                    {% for path in output %}
+                        <div>
+                            <a href="/{{start}}_to_{{ end }}_{{ loop.index }}"> {{path}} </a>
+                        </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>    
+    
+{% endblock %}
